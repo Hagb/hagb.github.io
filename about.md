@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 
-我叫郭俊余，是一本科生，在重庆大学读本科生。  
+我叫郭俊余，网名“Hagb”，本科生，在重庆大学学数学。  
 I'm Guo Junyu, also named "Hagb" on the Internet, an undergraduate of Chongqing University, majoring in mathematics.
 
 我爱好数学，认同自由软件的理念。  
