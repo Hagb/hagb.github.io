@@ -12,7 +12,7 @@ I'm Guo Junyu, also named "Hagb" on the Internet, an undergraduate of Chongqing 
 I loves mathematics and agrees with philosophy of free software.
 
 我是自由软件基金会（FSF）成员。   
-I'am a member of Free Software Foundation (FSF).
+I'm a member of Free Software Foundation (FSF).
 
 ![FSF member since August 2018](https://static.fsf.org/nosvn/associate/crm/818574.png)
 
