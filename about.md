@@ -20,6 +20,8 @@ I'm a member of [Free Software Foundation (FSF)](https://fsf.org).
 
 ### E-mail
 
+[hagb@hagb.name](mailto:hagb@hagb.name)
+
 [hagb_green@qq.com](mailto:hagb_green@qq.com)
 
 [hagbgreen@yahoo.com](mailto:hagbgreen@yahoo.com)
