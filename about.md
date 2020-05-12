@@ -5,11 +5,11 @@ permalink: /about/
 ---
 
 
-我叫郭俊余，网名“Hagb”，本科生，在重庆大学学数学。  
+我叫郭俊余，网名“Hagb”，本科生，在重庆大学学习数学。  
 I'm Guo Junyu, also named "Hagb" on the Internet, an undergraduate of Chongqing University, majoring in mathematics.
 
-我爱好数学，认同自由软件的理念。  
-I loves mathematics and agrees with philosophy of free software.
+我爱好数学，认同[自由软件](https://www.gnu.org/philosophy/free-sw.html)的[理念](https://www.gnu.org/philosophy/philosophy.html)。  
+I loves mathematics and agrees with [philosophy](https://www.gnu.org/philosophy/philosophy.html) of [free software](https://www.gnu.org/philosophy/free-sw.html).
 
 我是[自由软件基金会（FSF）](https://fsf.org)成员。   
 I'm a member of [Free Software Foundation (FSF)](https://fsf.org).
