@@ -1,0 +1,17 @@
+<div id="comments"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script>
+    var clientId = '82c800a8b9db1cb2a145'
+    var clientSecret = 'abcb4790d98c686e7656d28c756ebbaac5b89d3a'
+    var gitment = new Gitment({
+      owner: 'Hagb',
+      repo: 'hagb.github.io',
+      oauth: {
+        client_id: '79a995edb1d13224e424',
+        client_secret: '0a90186b175db31d16b3dd486260a3590eac9f24',
+      },
+    })
+
+    gitment.render('comments')
+</script>

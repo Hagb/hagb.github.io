@@ -1,7 +1,7 @@
 title: "Hagb 的小站"
-name: Hagb (郭俊余)
+author: Hagb (郭俊余)
 email: hagb_green@qq.com
-description: "本站内容如无特别说明均以 CC-BY-SA 3.0 协议发布."
+description: ""
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  hagb
@@ -11,7 +11,9 @@ minima:
   social_links:
     github: Hagb
     gitlab:
-      - username: Hagb
+      username: Hagb
+disqus:
+  shortname: just_a_workaround
 # Build settings
 markdown: kramdown
 theme: minima
