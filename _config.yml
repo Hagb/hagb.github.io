@@ -1,16 +1,26 @@
 title: "Hagb 的小站"
+name: Hagb (郭俊余)
 email: hagb_green@qq.com
-description: "Hagb 的小站" # this means to ignore newlines until "baseurl:"
+description: "本站内容如无特别说明均以 CC-BY-SA 3.0 协议发布."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username: jekyllrb
 github_username:  hagb
-
+lang: zh_CN
+minima:
+  date_format: "%Y-%m-%d %H:%M"
+  social_links:
+    github: Hagb
+    gitlab:
+      - username: Hagb
 # Build settings
 markdown: kramdown
 theme: minima
 gems:
   - jekyll-feed
+  - jekyll-seo-tag
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 exclude:
   - Gemfile
   - Gemfile.lock
