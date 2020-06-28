@@ -50,13 +50,13 @@ sudo ip rule add iif lo table 3 {% endraw %}
 然后路由是这样的：
 
 ```
-(EC in docker)    [tun0] <---- route table of EC <----------+
-===[svpn]===========|============|==========================|=====
-                    |            |                  table 3 |
-(host)              V            |                      request(lo)
-               tasble main <-----+
+(EC in docker)    [tun0] <---- route table of EC <---+
+===[svpn]===========|============|===================|=====
+                    |            |           table 3 |
+(host)              V            |               request(lo)
+               table main <------+
                     V
-                物理网卡
+                [物理网卡]
 ```
 
 不走 EC 的流量可以在路由表 table 3 中定义。
