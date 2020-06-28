@@ -67,7 +67,7 @@ sudo ip rule add iif lo table 3 {% endraw %}
 
 ```
 sudo ip route add table 3 10.24.0.0/24 dev wlp2s0
-sudo ip rule add iff wlp2s0 table 3
+sudo ip rule add iif wlp2s0 table 3
 ```
 
 ## 折腾过程中的坑
