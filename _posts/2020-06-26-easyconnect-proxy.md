@@ -66,7 +66,7 @@ sudo ip rule add iif lo table 3 {% endraw %}
 如果要开热点或者用网线共享 EC 网络，那么还需要运行（以下以共享网络所用网卡名为`wlp2s0`，网段为`10.42.0.0/24`为例）
 
 ```
-sudo ip route add table 3 10.24.0.0/24 dev wlp2s0
+sudo ip route add table 3 10.42.0.0/24 dev wlp2s0
 sudo ip rule add iif wlp2s0 table 3
 ```
 
