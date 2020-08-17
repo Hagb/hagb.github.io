@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "开始尝试写博客"
-date:   2020-06-21 17:55:00 +0800
+date:   2020-06-21 17:55:00
 categories: jekyll update
 ---
 
