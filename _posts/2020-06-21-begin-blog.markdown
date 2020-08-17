@@ -9,5 +9,5 @@ categories: jekyll update
 
 `hagb.name`的域名也租了几年，也就是租着，什么新的都没写。现在，看看能不能写起博客，养成写博客的习惯。
 
-最近准备折腾 [coq](https://coq.inria.fr/) 的定理机器验证。
+最近准备折腾 ~~[coq](https://coq.inria.fr/)~~（2020-08-17 更新：已经转投 [lean](https://leanprover.github.io/) 了）的定理机器验证。
 
