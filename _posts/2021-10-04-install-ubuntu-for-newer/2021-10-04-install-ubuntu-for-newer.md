@@ -169,7 +169,7 @@ date:   2021-10-04 04:00
     </details>
 
 
-### 虚拟机的一些可选配置 [^ubuntu-require]
+### 虚拟机的一些可选配置[^ubuntu-require]
 
 1. 打开 VirtualBox，如图所示，点击`设置`
 
