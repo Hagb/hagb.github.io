@@ -14,6 +14,10 @@ date:   2021-10-04 04:00
 
 该文档的安装步骤基于 Windows 上的虚拟机软件 VirtualBox 及 GNU/Linux 发行版 Ubuntu。
 
+最终效果（参考）：
+
+![](install-neofetch-7.png.jpg)
+
 ### 组成部分及阅读顺序
 
 1. [下载并安装 VirtualBox](#下载并安装-virtualbox)
@@ -128,7 +132,7 @@ date:   2021-10-04 04:00
 
     </details>
 
-4. 是否创建虚拟硬盘，无特殊需求保持默认选项（`现在创建虚拟硬盘`）即可，点击`创建`
+4. 是否创建虚拟硬盘，无特殊需求保持默认选项（`现在创建虚拟硬盘`）即可，点击`创建`；如果您只想试用 Ubuntu 而不想安装，此处选择`不添加虚拟硬盘`，然后该教程跳到[虚拟机的一些可选配置](#虚拟机的一些可选配置)
 
     <details markdown="1" ><summary>截图</summary>
 
@@ -241,7 +245,239 @@ date:   2021-10-04 04:00
 
 ## 安装 Ubuntu
 
-如果操作到这儿了请催更！
+1. 接上一个步骤，我们会看到如下界面短暂地出现
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-1.png.jpg)
+
+    ![](install-ubuntu-2.png.jpg)
+
+    </details>
+
+2. 然后进入如下界面，此时系统在校验安装镜像的完整性（即，镜像的数据是否正确），可以按 `Ctrl+C` 跳过该步骤（生产环境中不建议这么做）
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-3.png.jpg)
+
+    </details>    
+
+3. 接下来可能会依次在如下界面停留片刻，请耐心等待
+
+    <details markdown="1" ><summary>截图</summary>
+
+    转圈
+
+    ![](install-ubuntu-4.png.jpg)
+
+    黑屏
+
+    ![](install-ubuntu-5.png.jpg)
+
+    进入图形界面
+
+    ![](install-ubuntu-6.png.jpg)
+
+    </details>    
+
+4. 之后可以看到安装程序自动启动
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-7.png.jpg)
+
+    </details>
+
+5. 在窗口左侧的语言选择框里向下滚动，选择`中文(简体)`
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-8.png.jpg)
+
+    </details>
+
+6. 点击`安装 Ubuntu`；而如果您不打算安装 Ubuntu 而仅仅想试用，请点击`试用 Ubuntu`，请跳到下面 `试用 Ubuntu` 的折叠内容
+
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-9.png.jpg)
+
+    </details>
+
+    <details markdown="1" ><summary>试用 Ubuntu</summary>
+
+    点击`使用 Ubuntu`后虚拟机会自动重启，一会儿后进入 Ubuntu 的桌面。
+
+    此时，按 `Ctrl+Alt+T` 打开终端，输入
+    ``` bash
+    deb http://mirrors.cqu.edu.cn/ubuntu/ focal universe | sudo tee -a /etc/apt/sources.list
+    ```
+    注意以下几点：
+    - `universe` 和 `sudo` 之间的一竖不是字母 `l`，而是 `\` 键上符号 `|`。
+    - **单词不要拼错，符号不要打错，空格不要漏了**
+
+    按回车键，之后跳到该教程的[最终效果](#最终效果)部分。
+    </details>
+
+7. 键盘布局，一般保持默认即可，点击`继续`
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-9.png.jpg)
+
+    </details>
+
+8. 无特殊需要保持默认即可（时间不充裕的话可以取消`安装Ubuntu时下载更新`的勾选）点击`继续`
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-10.png.jpg)
+
+    </details>
+
+9. 如果使用虚拟机安装，无特殊需要保持默认即可；如果在真机上安装，请根据实际情况进行配置，点击`现在安装`
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-11.png.jpg)
+
+    </details>
+
+10. 弹出分区修改的确认对话框，点击`继续`
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-12.png.jpg)
+
+    </details>
+
+11. 选择时区，用鼠标在中国的版图内点一下（如果您在北京时区），地图下面出现 `Shanghai` 字样即为北京时区。之后点击`继续`。
+
+    PS: 这个地图上标注的是各地区的时区划分，而**不是国界**
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-13.png.jpg)
+
+    ![](install-ubuntu-14.png.jpg)
+
+    </details>
+
+12. 填写信息，其中填写`姓名`（请使用英文字母、数字、下划线等组合，不要是用空格和中文）后`计算机名`、`用户名`会自动填充，无特殊需要这几项可以不改，之后填写密码，以后会使用这个密码来登陆。设置完后点击`继续`
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-15.png.jpg)
+
+    </details>
+
+13. 程序进入安装过程，此处可能需要一些时间，请耐心等待
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-16.png.jpg)
+
+    ![](install-ubuntu-17.png.jpg)
+
+    </details>
+
+14. 安装完成，点击`现在重启`以重启虚拟机
+    
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-18.png.jpg)
+
+    </details>
+
+15. 片刻之后出现 `Please remove the installation medium, then press ENTER` 字样的提示，按回车键（Enter）
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-19.png.jpg)
+
+    </details>
+
+16. 之后虚拟机会重启，一会儿可以见到登陆界面
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-20.png.jpg)
+
+    </details>
+
+17. 单击自己的用户名，输入密码并按回车键以登陆，之后可见`连接帐号`的向导，无相关需求点击`跳过`即可
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-21.png.jpg)
+
+    </details>
+
+18. Livepatch 配置，无需要直接点击`前进`即可
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-22.png.jpg)
+
+    </details>
+
+19. 选择是否发送信息给 Cononical（Ubuntu 是该公司的项目），之后点击`前进`
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-23.png.jpg)
+
+    </details>
+
+20. 准备就绪，点击`完成`
+    
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-24.png.jpg)
+
+    </details>
+
+21. 若出现提醒更新的窗口，点击`稍后提醒`即可
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-ubuntu-25.png.jpg)
+
+    </details>
+
+## 最终效果
+
+1. 按 `Ctrl+Alt+T`，屏幕上会出现一个终端
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-neofetch-1.png.jpg)
+
+    </details>
+
+2. 输入 `sudo apt update`（注意**其中的空格不可省略，单词不要拼错**）并按回车键，之后若看到输入密码的提示请输入之前设定的密码（注意输入过程中密码不会回显出来，即输入过程中看不到任何变化）并按回车键
+   
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-neofetch-2.png.jpg)
+
+    ![](install-neofetch-3.png.jpg)
+
+    </details>
+
+3. 等上个指令运行完毕（绿色的字符重新出现，如截图中的 `hagb@hagb-VirtualBox` 字样）后，输入 `sudo apt install neofetch` 并回车，看到`您希望继续执行吗`的询问后按 `y` 并回车以确认
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](install-neofetch-4.png.jpg)
+
+    </details>
+
+4. 等上个指令执行完后，输入 `neofetch` 并回车，即可见到文章开头的效果：
+
+    ![](finial.png.jpg)
 
 ## 附录 1：分辨率过低导致安装界面显示不全的解决方法
 
