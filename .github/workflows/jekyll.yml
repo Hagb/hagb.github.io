@@ -1,0 +1,35 @@
+name: Jekyll site CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the site in the jekyll/builder container
+      run: |
+        docker run \
+        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+        cd ${{ github.workspace }}
+        commit=$(git rev-parse HEAD)
+        cd ~
+        cp ${{ github.workspace }}/_site . -R
+        cd _site
+        git init
+        git add *
+        git config --global user.email ${{ secrets.EMAIL }}
+        git config --global user.name ${{ secrets.USERNAME }}
+        git commit -m $commit
+        mkdir ~/.ssh
+        echo "${{ secrets.SSLKEY }}" > ~/.ssh/id_rsa
+        echo "${{ secrets.SSLKEY_PUBLIC }}" > ~/.ssh/id_rsa.pub
+        chmod 600 ~/.ssh/id_rsa
+        git push git@github.com:Hagb/hagb.github.io HEAD:gh-pages -f
