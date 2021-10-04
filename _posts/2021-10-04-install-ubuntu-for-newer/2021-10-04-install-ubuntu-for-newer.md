@@ -191,9 +191,57 @@ date:   2021-10-04 04:00
 
     </details>
 
+### 引导 Ubuntu 安装程序
+
+1. 做完前述操作后，点击`启动`
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](load-linux-vm-1.png.jpg)
+
+    </details>
+
+2. 片刻过后，应该会看到`选择启动盘`的界面，如图所示，点击黄色文件夹图标（`选择一个虚拟光盘文件`）
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](load-linux-vm-1.png.jpg)
+
+    </details>
+
+3. 在弹出来的窗口中点击`注册`，选择之前下载好的 Ubuntu 安装镜像 `ubuntu-20.04.3-desktop-amd64.iso`后，点击`打开`
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](load-linux-vm-2.png.jpg)
+
+    ![](load-linux-vm-3.png.jpg)
+
+    ![](load-linux-vm-4.png.jpg)
+
+    </details>
+
+4. 选中刚刚添加的安装镜像，并点击`选择`，之后可以看到`ubuntu-20.04.3-desktop-amd64.iso`的字样已经出现在`选择启动盘`的界面，点击`启动`
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](load-linux-vm-5.png.jpg)
+
+    ![](load-linux-vm-6.png.jpg)
+
+    </details>
+
+5. **注意，之后要进入 VirtualBox 的虚拟系统中，您的鼠标和键盘会被虚拟系统占用，被用于操作虚拟系统，按右 Ctrl 键（键盘右侧的 Ctrl 键）可以解除这种占用状态，您之后可能会需要多次使用此键来解除占用翻阅资料。** 点击虚拟机窗口的虚拟区域，出现占用鼠标、键盘的提示，按`捕获`
+
+    <details markdown="1" ><summary>截图</summary>
+
+    ![](load-linux-vm-7.png.jpg)
+
+    </details>
+
 ## 安装 Ubuntu
 
-如果您已经做完了前面的操作，从而看到了这句话，请联系作者催更！
+如果操作到这儿了请催更！
 
 ## 附录 1：分辨率过低导致安装界面显示不全的解决方法
 
