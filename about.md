@@ -40,6 +40,6 @@ hagb@xmpp.zone
 
 我的 OpenPGP 密钥指纹 / My OpenPGP key fingerprint : `40B5 42D3 636C F9D1 F599  C40A 5080 8599 9444 643A`
 
-[我的 OpenPGP 公钥 / My OpenPGP public key](key.asc)
+[我的 OpenPGP 公钥 / My OpenPGP public key](/key.asc)
 
 
