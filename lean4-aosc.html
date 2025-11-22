@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh_CN"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AOSC 中大校园行上 Lean4 分享的幻灯片和代码 | Hagb 的小站</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="AOSC 中大校园行上 Lean4 分享的幻灯片和代码" />
+<meta name="author" content="Hagb (郭俊余)" />
+<meta property="og:locale" content="zh_CN" />
+<meta name="description" content="幻灯片" />
+<meta property="og:description" content="幻灯片" />
+<link rel="canonical" href="/lean4-aosc" />
+<meta property="og:url" content="/lean4-aosc" />
+<meta property="og:site_name" content="Hagb 的小站" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-08-15T00:00:00-800:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="AOSC 中大校园行上 Lean4 分享的幻灯片和代码" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hagb (郭俊余)"},"dateModified":"2025-08-15T00:00:00-800:00","datePublished":"2025-08-15T00:00:00-800:00","description":"幻灯片","headline":"AOSC 中大校园行上 Lean4 分享的幻灯片和代码","mainEntityOfPage":{"@type":"WebPage","@id":"/lean4-aosc"},"url":"/lean4-aosc"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Hagb 的小站" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Hagb 的小站</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">AOSC 中大校园行上 Lean4 分享的幻灯片和代码</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-08-15T00:00:00-800:00" itemprop="datePublished">2025-08-15 00:00
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><a href="/lean4-aosc.pdf">幻灯片</a></p>
+
+<p><a href="https://live.lean-lang.org/#codez=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">代码（点击跳转至 Lean 4 Web，可在线运行）</a></p>
+
+  </div><div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js?v=0.0.0"></script>
+<script>
+const gitalk = new Gitalk({
+  clientID: '79a995edb1d13224e424',
+  clientSecret: '0a90186b175db31d16b3dd486260a3590eac9f24',
+  repo: 'hagb.github.io',      // The repository of store comments,
+  owner: 'Hagb',
+  admin: ['Hagb'],
+  id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+  distractionFreeMode: false  // Facebook-like distraction free mode
+})
+
+gitalk.render('comments')
+</script>
+<a class="u-url" href="/lean4-aosc" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Hagb 的小站</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Hagb (郭俊余)</li><li><a class="u-email" href="mailto:hagb_green@qq.com">hagb_green@qq.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/hagb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">hagb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+	   <p> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a><br />
+	       Copyright ©   2025 Hagb (郭俊余)<p></div>
+      </div>
+     </div>
+</footer>
+
+</body>
+
+</html>
