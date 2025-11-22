@@ -1,0 +1,243 @@
+---
+# bibliography: [refs.bib]
+csl: china-national-standard-gb-t-7714-2015-numeric.csl 
+CJKmainfont: Noto Sans CJK SC
+monofont: Noto Sans Mono
+# toc: false
+# toc-depth: 3
+top-level-division: section
+slide-level: 2
+documentclass: SYSU-beamer-template/libs/format
+# beamer
+# toc-title: 目录
+# slide-level: 3
+title: 形式化证明与证明器 Lean 简介
+author: 郭俊余
+# mainfont: Noto Sans CJK SC
+header-includes:
+  - \include{SYSU-beamer-template/libs/preamble.tex}
+#  - \usepackage{cqubeamer}
+  - \usepackage{amsmath,amsfonts,amssymb,bm}
+  - \usepackage{xcolor}
+  - \usepackage{cancel}
+  - \usepackage{multicol}
+  # - \usepackage{centernot}
+  # - \usepackage{hyperref}
+  # - \newif\ifframeintoc
+  # - \addtobeamertemplate{frametitle}{}{\ifframeinlbf\addcontentsline{lbf}{section}{\protect\makebox[2em][l]{\protect\usebeamercolor[fg]{structure}\insertframenumber\hfill}\protect\hyperlink{page.\insertframenumber}\insertframetitle\par}\else\fi}
+
+  # - \usepackage{titlesec}
+  # - \newcommand{\sectionbreak}{\clearpage}
+  # - \newcommand{\subsectionbreak}{\clearpage}
+  # - \AddToHook{cmd/subsection/before}{\clearpage}
+---
+
+# 非形式证明与形式证明
+
+非形式证明：
+
+- 使用自然语言和数学语言书写
+- 除了逻辑以外，还基于直觉、上下文等省略了大量细节
+- 比较容易写
+- 易读，便于交流
+- 无法机械化验证
+- 可能有漏洞
+
+形式证明：
+
+- 使用严格的形式语言书写
+- 严格基于逻辑和公理
+- 写起来较为困难
+- 单纯的形式证明易读性较差
+- **可以机械化进行验证**
+- **不可能有漏洞**
+
+## 定理证明器的工作流程
+
+![](flow.pdf)
+
+（该图修改自 https://math.andrej.com/asset/data/formalizing-invisible-mathematics.pdf）
+
+<!--
+# 形式化证明在数学中实际应用的重要进展
+
+## 四色定理
+
+- 1879 年，Kempe“证明”四色定理；1890 年证明被发现致命漏洞
+- 1976 年，Appel 和 Haken 使用计算机对 1936 种情况进行穷举，给出证明（受到质疑）
+
+## 球体填充问题
+
+- 1993 年，项武义宣称证明了该问题，但被认为是不完善的
+- 1998 年，Hales 使用计算机进行证明（超过十万个线性规划，3GB 数据）
+- 2003 年，审查 Hales 的证明的专家组宣布确定了大部分证明的正确性，除了不能完全确定电脑计算的正确性。同年 Hales 宣布将对证明进行完整的形式化验证
+
+![最密堆积](橘子.pdf){width=50% height=50%}
+
+## 进展
+
+- 2004 年：素数定理（Coq, Avigad 等人）[^pm]
+
+  $$\pi(n)\sim\frac{n}{\ln(n)}.$$
+
+- 2004 年：四色定理（Coq，Gonthier 等人）[^fc]
+- 2014 年：球体填充问题（Isabelle、HOL Light，Flyspeck 项目组 20 多人）[^k]
+- 2020 年：Liquid Tensor Experiment（Lean，）[^1]
+
+[^pm]: <https://arxiv.org/abs/cs/0509025>
+[^fc]: <https://github.com/coq-community/fourcolor>
+[^k]: <https://doi.org/10.1017%2Ffmp.2017.1>
+[^1]: <https://xenaproject.wordpress.com/2020/12/05/liquid-tensor-experiment/>
+-->
+# Lean 定理证明器
+
+## Mathlib——Lean 的数学库
+
+- 包含多个数学分支的形式化[^ms]
+- 共有 119112 个定义、238685 个定理、653 个贡献者[^stat]
+
+[^ms]: <https://leanprover-community.github.io/mathlib-overview.html>
+[^stat]: <https://leanprover-community.github.io/mathlib_stats.html>
+
+## 例子——Lean 的类型
+
+```lean4
+#check 0           -- 输出 0 : ℕ
+#check 0+1=1       -- 输出 0 + 1 = 1 : Prop
+#check 0+1=2       -- 输出 0 + 1 = 2 : Prop
+#check zero_add 1  -- 输出 zero_add 1 : 0 + 1 = 1
+
+def zero : ℕ := 0
+#check zero -- 输出 zero : ℕ
+```
+
+## 例子——Lean 中的简单证明与证明策略 {.allowframebreaks}
+
+
+```lean4
+def zero : ℕ := 0
+
+--“若 a = 0，那么称 eq_zero a”
+def eq_zero (a : ℕ) : Prop := a = 0
+
+-- 下面给出 0 = 0 和 0 + 1 = 1 这两个命题的证明，
+def zero_eq_zero : eq_zero 0 := refl 0
+def zero_add_one_eq_one : zero + 1 = 1 := zero_add 1
+
+example : 0 = 0 := refl 0
+lemma my_trans {a b c d: ℕ}
+  (h₁ : a ≤ b) (h₂ : b ≤ c) (h₃ : c = d) :
+  a ≤ d :=
+  le_of_eq_of_le' h₃ (le_trans h₁ h₂)
+```
+
+\framebreak
+
+更接近于非形式证明的证明：
+
+```lean4
+
+
+lemma my_trans' {d : ℕ} (h₃ : c = d) : a ≤ d := by
+  rw [←h₃]
+  exact my_trans h₁ h₂
+
+lemma my_trans'' {d: ℕ} (h₃ : c = d): a ≤ d := by
+  linarith
+```
+
+## 例子——整除关系
+
+### 定义
+
+```lean4
+def mydvd (a : ℕ) (b : ℕ) := ∃ x : ℕ, b = a * x
+infix:50 " ∣' " => mydvd
+```
+
+### 传递性
+
+```lean4
+theorem mydvd_trans :
+  a ∣' b → b ∣' c → a ∣' c := by
+  intro h₁ h₂
+  cases' h₁ with x₁ h₁
+  cases' h₂ with x₂ h₂
+  use x₁ * x₂
+  rw [h₂, h₁]
+  ring
+```
+
+
+## 例子——Lean 中的多态 {.allowframebreaks}
+
+考虑以下命题
+
+:::{.block}
+### 命题的原始叙述
+
+如果 $f$ 是线性的，那么 $f(3\cdot x + y) = 3\cdot f(x) + f(y).$
+:::
+
+\framebreak
+
+:::{.block}
+### 命题稍微详细的叙述
+
+若 $K$ 是一个域，$U$ 和 $V$ 是 $K$ 上的向量空间，那么如果 $f: U \rightarrow V$ 是线性的，则 $\forall x,y\in U, f(3\cdot x + y) = 3\cdot f(x) + f(y).$
+:::
+
+\framebreak
+
+:::{.block}
+### 命题详尽的叙述
+
+若
+
+- $K$ 装备了加法 $+_K$ 和乘法 $\cdot_K$ 后为一个域
+- $U$ 上装备了加法 $+_U$ 和关于域 $K'$ 的标量乘法 $\cdot_{K,U}$ 则为向量空间 $U'$
+- $V$ 装备了加法 $+_V$ 和关于域 $K'$ 有标量乘法 $\cdot_{K,V}$ 则为向量空间 $V'$
+
+那么如果 $f : U \rightarrow V$ 为向量空间 $U'$ 到 $V'$ 的线性映射，则 $\forall x,y\in U, f(3_K\cdot_{K,U} x +_U y) = 3_K\cdot_{K,V} f(x) +_V f(y).$
+:::
+
+\framebreak
+
+### Lean 形式化代码
+```lean
+import Mathlib.LinearAlgebra.Basic
+variable (U : Type*)       -- U 是任意类型
+variable [AddCommGroup U]  -- U 有加法交换群结构
+variable (V : Type*) [AddCommGroup V]  -- 同上
+variable (K : Type*) [Field K] -- K 有域结构
+-- K 关于 U、V 有线性的标量乘法
+variable [Module K V] [Module K U]
+-- 假设 f 为 U 到 V 关于 K 的线性映射
+variable (f : U →ₗ[K] V)
+
+example: ∀ x y, f (2•x + y) = 2•f x + f y :=
+  by simp
+```
+
+<!--## 谢谢大家
+
+如果感兴趣的话，可以访问以下链接
+
+![Lean 社区 <https://leanprover-community.github.io>](comunity.bmp)->
+
+<!-- 
+* 什么是公理化系统 （5分钟）
+  * 介绍计算机证明系统
+  * 介绍公理化系统
+  * 二者的区别，公理化系统一定是对的
+  * 看一个简单的例子（论文里第一个），PPT上介绍
+  * 介绍Lean系统
+    * 是公理化系统的一种，其他的公理化系统还有：
+    * 它的来历，和其他系统的区别，好处，社区什么的
+* 实际操作lean系统演示  （8分钟）
+  * 和python类似，找个文本窗口写代码，如何通过命令行编译运行
+  * 详细解释一些和大众理解有区别的地方，例如论文2.3节中对f是线性的描述，截图放入PPT
+  * 证明一些大家都知道的定理作为测试，详细解释，不要太复杂的定理，代码大概二三十行一个文件
+* lean系统的前景，成就 （2分钟）
+  * 目前发展状态，好还是不好，为什么
+  * 如果要了解，给出渠道，放出二维码 -->
